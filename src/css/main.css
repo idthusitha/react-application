@@ -1,0 +1,577 @@
+body {
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    color: #2e2e2e;
+    transition: all .333s ease-out 0s;
+    background-color: #f5f5f5;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #1a1a1a;
+    margin-bottom: 0;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    border-radius: 0.1rem;
+}
+
+.top-bar-main-buttons {
+    float: right;
+}
+
+.top-bar-main-buttons button {
+    margin: 0 0.2rem;
+    padding: .25rem 1.5rem;
+    min-width: 111px;
+}
+
+.customer-email-wrapper {
+    margin-top: 1rem;
+}
+
+.form-control {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 0.1rem;
+}
+
+.required-star {
+    color: #E00201;
+    font-size: 0.4rem;
+    vertical-align: text-top;
+    margin: 0 0.2rem;
+    margin-top: 4px;
+}
+
+.note-star {
+    color: #0672b9;
+    font-size: 0.5rem;
+    vertical-align: text-top;
+    margin: 0 0.2rem;
+}
+
+.customer-email-wrapper .input-group-append button {
+    height: 31px;
+}
+
+.customer-email-wrapper .fa-search {
+    font-size: 1rem;
+    vertical-align: text-bottom;
+}
+
+.customer-email-wrapper .input-group {
+    width: 66%;
+}
+
+.section-title {
+    background-color: #0672b9;
+    padding: 7px 10px;
+}
+
+.section-title h6 {
+    color: #fff;
+    font-size: 13px;
+}
+
+.section-body {
+    font-weight: 500;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.delete-customer-details-wrapper .section-body .dcd-check .custom-control-label {
+    vertical-align: middle;
+}
+
+.dcd-note {
+    margin-top: 1rem;
+}
+
+.dcd-note label {
+    color: #696969;
+}
+
+.delete-customer-details-wrapper .section-body .dcd-check .custom-control-label::before,
+.delete-customer-details-wrapper .section-body .dcd-check .custom-control-label::after {
+    top: 0.08rem;
+}
+
+.unsubscribe-main .custom-control-label::before,
+.unsubscribe-main .custom-control-label::after {
+    top: 0.08rem;
+}
+
+.customer-email-list {
+    min-height: 18rem;
+}
+
+.lookup-details-main {
+    margin-top: 0.5rem;
+}
+
+.lookup-item-list,
+.quick-filters,
+.reservation-info-list {
+    border: 1px solid #eee;
+}
+
+/* Quick Filters */
+.quick-filters {
+    padding: 0.5rem;
+    ;
+}
+
+.quick-filters li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 4px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 4px;
+    width: 22px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+}
+
+.quick-filters li:hover {
+    background-color: #003366;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.quick-filter-title label {
+    margin-top: 0.5rem;
+}
+
+.quick-filter-title>h6 {
+    background-color: #e0f2ff;
+    padding: 5px;
+}
+
+.quick-filters-alphabet ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.quick-filter-search {
+    margin: 0.7rem 0;
+}
+
+/* End Quick Filters */
+
+/* Reservation info list */
+.reservation-info-list {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.reservation-info-list-wrapper>ul>li {
+    margin-bottom: 0.15rem;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 0.1rem;
+}
+
+.reservation-info-list-wrapper>ul>li>div {
+    display: inline-block;
+}
+
+.reservation-info-list-wrapper>ul>li>div:first-child {
+    width: 22%;
+}
+
+.reservation-info-list-wrapper>ul>li>div:last-child {
+    width: 77%;
+    padding-left: 0.3rem;
+    color: #002780;
+    font-weight: 600;
+}
+
+.reservation-info-list-wrapper>ul>li>div:first-child span {
+    float: right;
+}
+
+/* End Reservation info list */
+
+/* Lookup List */
+.lookup-item-list {
+    padding: 0.5rem;
+    max-height: 352px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.lookup-item-list-wrapper ul>li {
+    border: 1px solid #2196f3;
+    background-color: #d0ebff;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 4px;
+    list-style: none;
+    transition: .3s ease-in-out;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.lookup-item-list-wrapper ul>li:hover {
+    background-color: #4285f4;
+    border: 1px solid #136baf;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* End Lookup List */
+
+/* Validation */
+.invalid-feedback {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    -webkit-transition: color .3s cubic-bezier(.215, .61, .355, 1);
+    transition: color .3s cubic-bezier(.215, .61, .355, 1);
+
+}
+
+.number-input input::-webkit-outer-spin-button,
+.number-input input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.number-input input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.alert-icon .fa-check-circle {
+    color: #28a745;
+}
+
+.alert-icon .fa-exclamation {
+    color: #007bff;
+}
+
+/* Validation */
+
+/* Unsubscribe */
+.unsubscribe-main-container {
+    background-color: #f8f9fa;
+    border: 1px solid #efefef;
+    padding: 1% 10%;
+    margin-top: 1rem;
+}
+
+.unsubscribe-title {
+    margin-bottom: 1rem;
+}
+
+.unsubscribe-submit-btn {
+    margin-top: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.unsubscribe-submit-btn {
+    width: 100%;
+}
+
+.unsubscribe-main label {
+    color: #77757a;
+    font-size: 13px;
+}
+
+.unsubscribe-note p {
+    color: #77757a;
+    margin-top: 0.4rem;
+    font-size: 13px;
+}
+
+.unsubscribe-all-check {
+    display: block;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.unsubscribe-success {
+    width: 100%;
+    text-align: center;
+}
+
+.unsubscribedNote {
+    margin-top: 0.5rem;
+    font-size: 13px;
+    color: #757575;
+}
+
+.unsubscribedPortalName {
+    color: #424242;
+    font-weight: 500;
+}
+
+.undoUnsubscribed {
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.unsubscribe-success-close {
+    text-align: center;
+    margin-top: 0.7rem;
+}
+
+.unsubscribe-close-btn {
+    padding: .15rem 1.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: super;
+}
+
+/*End  Unsubscribe */
+
+.title-1 {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Message Box */
+.modal-close-btn {
+    text-align: center;
+    margin-top: 0.7rem;
+    border-top: 1px solid #d8d8d8;
+    padding-top: 0.7rem;
+}
+
+.modal-close-btn button {
+    text-align: center;
+    padding: 0.10rem 1.5rem;
+    vertical-align: top;
+    margin: 0rem 0.5rem;
+    min-width: 85px;
+}
+
+.message-box-modal {
+    text-align: center;
+}
+
+.alert-message h6 {
+    font-size: 0.9rem;
+}
+
+.alert-icon i {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Message Box */
+
+/* Bank Details */
+.bank-details-submit {
+    text-align: right;
+    margin-top: 1rem;
+    margin-right: -10px;
+}
+
+.bank-details-submit button {
+    padding: .25rem 2.3rem;
+}
+
+.beneficiary-account-details-section {
+    margin-top: 1.5rem;
+}
+
+.beneficiary-bank-details-section .form-group,
+.beneficiary-account-details-section .form-group {
+    margin: 0.5rem 0;
+}
+
+.bd-sec-title h6 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.bank-details-container label {
+    color: #6c757d;
+}
+
+/* Bank Details */
+
+/* Business Profile */
+.ac-business-profile {
+    background-color: #ffffff;
+    padding: 0.5rem;
+}
+
+.rwt__tab {
+    text-align: left;
+    font-weight: 500;
+}
+
+.rwt__tablist[aria-orientation="vertical"] .rwt__tab[aria-selected="true"] {
+    border: 1px solid #dbf9ff;
+}
+
+.bp-account-title {
+    padding: 1rem 2rem;
+}
+
+.bp-account-title-2 {
+    padding: 1rem 0rem;
+}
+
+.rwt__tabpanel {
+    width: 100%;
+    height: 100%;
+}
+
+.partner-code {
+    font-weight: 500;
+    color: #6c757d;
+    padding-top: 1rem;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.menu-body label {
+    margin-bottom: .2rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.bp-info .row {
+    margin: 0.5rem 0;
+}
+
+.bp-account-sub-title h6 {
+    font-size: 0.8rem;
+}
+
+.additional-settings-section {
+    margin-top: 1.5rem;
+}
+
+.choose-file-btn {
+    padding-top: 23px;
+}
+
+.bp-save-btn {
+    margin-top: 1rem;
+}
+
+.bp-save-btn .btn {
+    padding: .25rem 2rem;
+}
+
+.bp-voucher-from label {
+    vertical-align: text-top;
+}
+
+label[for="file-input"] {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    cursor: pointer !Important;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    border: none;
+    padding: .40rem .8rem;
+    line-height: 1.5;
+    background: #007bff;
+    color: #fff;
+    font-size: 1.1em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input[type="file"]::-ms-browse {
+    border: none;
+    padding: .40rem .8rem;
+    line-height: 1.5;
+    background: #007bff;
+    color: #fff;
+    font-size: 1.1em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* End Business Profile */
+
+.title-1 {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Media Query */
+@media only screen and (min-width: 1305px) {
+    .emergency-contact-no .col-form-label {
+        padding-left: 0;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 1223px) and (max-width: 1305px) {
+    .emergency-contact-no .col-form-label {
+        padding-left: 2px;
+        padding-right: 2px;
+        white-space: nowrap;
+    }
+}
+
+/* End Media Query */
+/*****This is for poup******************/
+.popup {  
+    position: fixed;  
+    width: 100%;  
+    height: 90%;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin: auto;  
+    background-color:white;  
+  }
+  /*****This is for poup******************/
