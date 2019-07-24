@@ -3,8 +3,6 @@ import NoPageFound from './Common/NoPageFound';
 import LoginUser from './Login/LoginUser';
 import RegisterUser from './Register/RegisterUser';
 
-
-
 class ScreenPickerComponent extends Component {
   constructor(props) {
     super(props)
