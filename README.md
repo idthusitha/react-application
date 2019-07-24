@@ -33,5 +33,9 @@ npm run build
 # cd admin-setup-service-web
 npm start
 
+#Initial Page link
+http://localhost:3000/?screen=LoginUser
+http://localhost:3000/?screen=RegisterUser
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

@@ -7,7 +7,7 @@ class LoginUserComponent extends Component {
         this.state = {
             email: '',
             password: '',
-            checkMeOut: false
+            checkMeOut: false            
         }
 
     }
@@ -17,46 +17,56 @@ class LoginUserComponent extends Component {
         })
         //console.log("changedJSON" + this.state);
     }
+    loginUser = () => {
+        alert("loginUser")
+    }
+
+    registerUser = () => {       
+        //this.props.history.push('?screen=RegisterUser')       
+        window.location.href = "?screen=RegisterUser";
+        //return <Redirect to='?screen=RegisterUser' />        
+    }
+   
 
     render() {
-        return (
-            <Container >
-                <Card>
-                    <Card.Header as="h5">Login</Card.Header>
-                    <Card.Body>
-                        <Form>
-                            <Row className="text-center">
-                                <Form.Group as={Row} controlid="formBasicEmail">
-                                    <Col sm="6">
-                                        <Form.Label>Email address</Form.Label>
+        return (            
+            <Container >                
+                <Row className="justify-content-md-center">
+                    <Card>
+                        <Card.Header as="h5">User Login</Card.Header>
+                        <Card.Body>
+                            <Form>
+                                <Row>
+                                    <Col>
+                                        <Form.Group as={Row} controlid="formBasicEmail">
+                                            <Form.Label>Email address</Form.Label>
+                                            <Form.Control controlid="email" type="email" placeholder="Enter email" name="email" id="email" defaultValue={this.state.email} onChange={(e) => this.handleOnChange(e)} />
+                                            <Form.Text className="text-muted"> We'll never share your email with anyone else.</Form.Text>
+                                        </Form.Group>
                                     </Col>
-                                    <Col sm="12">
-                                        <Form.Control controlid="email" type="email" placeholder="Enter email" name="email" id="email" defaultValue={this.state.email} onChange={(e) => this.handleOnChange(e)} />
+
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Form.Group as={Row} controlid="formBasicPassword">
+                                            <Form.Label>Password</Form.Label>
+                                            <Form.Control controlid="password" type="password" placeholder="Password" name="password" id="password" defaultValue={this.state.password} onChange={(e) => this.handleOnChange(e)} />
+                                        </Form.Group>
                                     </Col>
-                                    <Col sm="12">
-                                        <Form.Text className="text-muted"> We'll never share your email with anyone else.</Form.Text>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Form.Group as={Row} controlid="formBasicChecbox">
+                                            <Form.Check type="checkbox" label="Check me out" name="checkMeOut" id="checkMeOut" defaultValue={this.state.checkMeOut} onChange={(e) => this.handleOnChange(e)} />
+                                        </Form.Group>
+                                        <Button variant="primary" onClick={this.loginUser} type="submit"> Submit</Button> &nbsp;&nbsp;
+                                        <Button variant="success" onClick={this.registerUser} type="button"> Register</Button>
                                     </Col>
-                                </Form.Group>
-                            </Row>
-                            <Row>
-                                <Col sm="12">
-                                    <Form.Group as={Row} controlid="formBasicPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control controlid="password" type="password" placeholder="Password" name="password" id="password" defaultValue={this.state.password} onChange={(e) => this.handleOnChange(e)} />
-                                    </Form.Group>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col sm="12">
-                                    <Form.Group as={Row} controlid="formBasicChecbox">
-                                        <Form.Check type="checkbox" label="Check me out" name="checkMeOut" id="checkMeOut" defaultValue={this.state.checkMeOut} onChange={(e) => this.handleOnChange(e)} />
-                                    </Form.Group>
-                                    <Button variant="primary" type="submit"> Submit</Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </Card.Body>
-                </Card>
+                                </Row>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Row>
             </Container>
         );
     }
