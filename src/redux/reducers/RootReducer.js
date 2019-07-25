@@ -1,0 +1,9 @@
+import { combineReducers } from 'redux';
+import LoadCountryReducer from './Common/LoadCountryReducer';
+
+export default combineReducers(
+  // This would produce the following state object
+  {
+    countryList: LoadCountryReducer
+
+  });
