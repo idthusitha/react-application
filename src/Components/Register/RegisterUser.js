@@ -16,8 +16,12 @@ class RegisterUser extends Component {
     //alert("componentDidMount")	  
     this.loadCountryList();
   }
+  componentWillUnmount() {
+    //alert("componentWillUnmount")
+  }
 
   componentWillReceiveProps(nextProps) {
+    //alert("componentWillReceiveProps")
     if (nextProps.countryList != null && nextProps.countryList.countryList.length > 0) {
       this.customCountryList(nextProps.countryList.countryList);
     }

@@ -26,6 +26,10 @@ class LoginUserComponent extends Component {
         window.location.href = "?screen=RegisterUser";
         //return <Redirect to='?screen=RegisterUser' />        
     }
+
+    clock = () => {               
+        window.location.href = "?screen=Clock";        
+    }
    
 
     render() {
@@ -60,7 +64,8 @@ class LoginUserComponent extends Component {
                                             <Form.Check type="checkbox" label="Check me out" name="checkMeOut" id="checkMeOut" defaultValue={this.state.checkMeOut} onChange={(e) => this.handleOnChange(e)} />
                                         </Form.Group>
                                         <Button variant="primary" onClick={this.loginUser} type="submit"> Submit</Button> &nbsp;&nbsp;
-                                        <Button variant="success" onClick={this.registerUser} type="button"> Register</Button>
+                                        <Button variant="success" onClick={this.registerUser} type="button"> Register</Button> &nbsp;&nbsp;
+                                        <Button variant="success" onClick={this.clock} type="button"> Clock</Button>
                                     </Col>
                                 </Row>
                             </Form>

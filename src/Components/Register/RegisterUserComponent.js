@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { Row, Col, Form, Button, Container, Card } from 'react-bootstrap';
 import MultipleAutoComplete from "../Common/MultipleAutoComplete"
+import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from 'react-toastify';
 
+import "react-datepicker/dist/react-datepicker.css";
 import 'react-toastify/dist/ReactToastify.css';
+
+var dateFormat = require('dateformat');
 
 class RegisterUserComponent extends Component {
     constructor(props) {
         super(props)
-        this.state = {            
+        this.state = {
             email: '',
+            birthday: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
             password: '',
             countryId: '',
             countryList: this.props.countryList,
@@ -29,6 +34,10 @@ class RegisterUserComponent extends Component {
             [e.target.name]: e.target.value,
         })
     }
+    handleOnDateChange = (e) => {
+        this.setState({ birthday: e });
+    }
+
     loginUser = () => {
         alert("loginUser")
     }
@@ -71,42 +80,48 @@ class RegisterUserComponent extends Component {
             this.notifyError("Email can not be empty!");
             isValidated = false;
         }
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email)) {
+            this.notifyError("Please enter a valid email address");
+            isValidated = false;
+        }
         return isValidated;
     }
 
 
     submitData = () => {
         if (this.validateSubmit()) {
-            alert("sumited");
+            this.notifySuccess("Data Saved Successfully!");
         }
     }
 
-
-
-    render() {
-        const { validated } = this.state;
-        return (            
+    render() {      
+        return (
             <Container >
                 <ToastContainer />
                 <Row className="justify-content-md-center">
-                    <Card>
+                    <Card border="primary">
                         <Card.Header as="h5">User Registration Page</Card.Header>
                         <Card.Body>
-                            <Form
-                                noValidate
-                                validated={validated}
-                            >
+                            <Form>
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridEmail">
                                         <Form.Label>Email</Form.Label>
-                                        <Form.Control required controlid="email" type="email" placeholder="Enter email" name="email" id="email" defaultValue={this.state.email} onChange={(e) => this.handleOnChange(e)} />
+                                        <Form.Control required controlid="email" type="email" placeholder="Enter email" name="email" id="email" onChange={(e) => this.handleOnChange(e)} />
                                     </Form.Group>
 
                                     <Form.Group as={Col} controlId="formGridPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control controlid="password" type="password" placeholder="Password" name="password" id="password" defaultValue={this.state.password} onChange={(e) => this.handleOnChange(e)} />
+                                        <Form.Control controlid="password" type="password" placeholder="Password" name="password" id="password" onChange={(e) => this.handleOnChange(e)} />
                                     </Form.Group>
                                 </Form.Row>
+
+                                <Form.Group controlId="formGriddateOfBirth">
+                                    <Form.Label>Date Of Birth</Form.Label><br />
+                                    <DatePicker
+                                        selected={this.state.birthday} required
+                                        onChange={this.handleOnDateChange}
+                                        dateFormat="dd-MMM-yyyy" minDate={new Date()} />
+                                </Form.Group>
 
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoPageFound from './Common/NoPageFound';
+import Clock from './Common/Clock';
 import LoginUser from './Login/LoginUser';
 import RegisterUser from './Register/RegisterUser';
 
@@ -18,6 +19,8 @@ class ScreenPickerComponent extends Component {
         return <LoginUser />
       case "RegisterUser":
         return <RegisterUser />
+      case "Clock":
+        return <Clock />
       default:
         return <NoPageFound />
     }
