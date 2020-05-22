@@ -5,7 +5,7 @@ import axios from 'axios';
 export const LoadCountry = () => {
 
   //let url = CONTROLLER_URL+'loadCountryList';
-  let url = "http://web.elb.cib.gateway.use1.aws.rezos.io/patuna-use1-zero/rezproduction/country_status/Y";
+  let url = "http://web.elb.prod.gateway.use1.aws.rezos.io/patuna-use1-zero/spencebeds/country_status/Y";
   return (dispatch, getState) => {
 
     dispatch({ type: 'FETCHING_COUNTRY', payload: { fetching: true, data: {} } });

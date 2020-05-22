@@ -17,7 +17,9 @@ class RegisterUserComponent extends Component {
             birthday: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
             password: '',
             countryId: '',
+            cityId: '',
             countryList: this.props.countryList,
+            cityList: this.props.cityList,
             checkMeOut: false
         }
     }
@@ -26,6 +28,12 @@ class RegisterUserComponent extends Component {
         if (nextProps.countryList.length > 0) {
             this.setState({
                 countryList: nextProps.countryList,
+            })
+        }
+
+        if (nextProps.cityList.length > 0) {
+            this.setState({
+                cityList: nextProps.cityList,
             })
         }
     }
@@ -49,6 +57,16 @@ class RegisterUserComponent extends Component {
         }
         this.setState({
             countryId: countryIdTemp
+        });
+    }
+
+    onCityChange = (e) =>{
+        let cityIdTemp = "";
+        for (let i = 0; i < e.length; i++) {
+            cityIdTemp += (e[i].key + (i < e.length - 1 ? "," : ""));
+        }
+        this.setState({
+            cityId: cityIdTemp
         });
     }
 
@@ -148,7 +166,13 @@ class RegisterUserComponent extends Component {
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridCity">
                                         <Form.Label>City</Form.Label>
-                                        <Form.Control />
+                                        {/* <Form.Control /> */}
+                                        <MultipleAutoComplete
+                                        labelKey={"city"}
+                                        options={this.state.cityList}
+                                        placeholder={"Select City(s)"}
+                                        onChange={(e) => this.onCityChange(e)}
+                                    />
                                     </Form.Group>
 
                                     <Form.Group as={Col} controlId="formGridState">
