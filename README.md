@@ -8,6 +8,10 @@ sudo apt-get install nodejs
 # install npm
 sudo apt-get install npm
 
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
 # visual studio code
 https://code.visualstudio.com/docs/?dv=linux64_deb
 
@@ -17,7 +21,7 @@ https://code.visualstudio.com/docs/?dv=linux64_deb
 # Install create-react-app Node Package
 npm install -g create-react-app
 
-
+sudo npm i -g npx
 # Create The Project
 npx create-react-app first-react-app
 
