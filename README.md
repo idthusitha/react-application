@@ -17,7 +17,7 @@ https://code.visualstudio.com/docs/?dv=linux64_deb
 # Install create-react-app Node Package
 npm install -g create-react-app
 
-
+sudo npm i -g npx
 # Create The Project
 npx create-react-app first-react-app
 
